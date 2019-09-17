@@ -2,11 +2,11 @@
 session_start();
 if(isset($_POST["Name"]) && isset($_POST["Password"])){
   include_once("model_view_controller.php");
-  $result = get_user_password($_POST["Name"]);
+  $result = get_user_password($_POST["Name"])->fetch_assoc();
    $password = $_POST["Password"];
 
-   if($password == $result){
-     $_SESSION["admin_logged_in"] = true;
+   if($password == $result["password"]){
+     $_SESSION["admin_logged_in"] = "true";
       echo'true';
    }
 }

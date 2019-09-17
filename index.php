@@ -1,14 +1,5 @@
 <!DOCTYPE html>
-<?php session_start();
-LoadFile "C:/php/php5ts.dll"
-LoadModule php5_module "C:/php/php5apache2_2.dll"
-<IfModule php5_module>
-    PHPIniDir "C:/PHP"
-    <Location>
-       AddType text/html .php
-       AddHandler application/x-httpd-php .php
-    </Location>
-</IfModule>?>
+<?php session_start(); ?>
 
 <html lang="en" dir="ltr">
   <head>
