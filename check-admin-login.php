@@ -6,6 +6,7 @@ if(isset($_POST["Name"]) && isset($_POST["Password"])){
    $password = $_POST["Password"];
 
    if($password == $result["password"]){
+     //session_destroy();
      $_SESSION["admin_logged_in"] = "true";
       echo'true';
    }

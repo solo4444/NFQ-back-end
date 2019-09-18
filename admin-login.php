@@ -6,14 +6,7 @@
     <?php include"styles.php"; ?>
   </head>
   <body>
-    <header>
-      <h1><a href="index.php">Švieslentė</a></h1>
-      <ul>
-        <li><a href="specialist-login.php">Specialisto puslapis</a></li>
-        <li><a href="">Lankytojo puslapis</a></li>
-        <li><a href="admin-login.php">Administravimo puslapis</a></li>
-      </ul>
-    </header>
+    <?php include 'header.php'; ?>
   <div class="container">
 
       <div class="form-group">
@@ -29,7 +22,18 @@
       <button type="submit" class="btn btn-primary submit">Submit</button>
 
     <script type="text/javascript">
+
       $(document).ready(function() {
+        $.ajax({
+              type: 'POST',
+              url: 'check-if-admin-already-logged-in.php',
+                   success: function(response) {
+                     if(response == "true"){
+                        location.href = "admin-panel.php";
+                      }
+                    }
+              });
+
         $(document).on("click", ".submit", function() {
 
           var atitinkareikalavimus = false;
@@ -55,9 +59,7 @@
                   url: 'check-admin-login.php',
                   data: { Name: vardas, Password: slaptazodis} ,
                        success: function(response) {
-                         alert(response);
                          if(response == "true"){
-                            alert("ash3");
                             location.href = "admin-panel.php";
                           }
                         }

@@ -12,4 +12,8 @@ header ul {
 header ul li {
   list-style: none;
 }
-a { color: inherit; } 
+a { color: inherit; }
+.eiles-card-info{
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
