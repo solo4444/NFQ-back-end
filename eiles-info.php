@@ -2,7 +2,10 @@
 include 'model_view_controller.php';
 
 $results = get_eiles_info();
-echo'<div class="row eiles-card-info border">
+
+
+
+echo '<div class="row eiles-card-info border">
   <div class="col border-right text-center">
     Vardas
   </div>
@@ -19,9 +22,11 @@ echo'<div class="row eiles-card-info border">
     Prognozuojamas Laikas
   </div>
 </div>';
+if($results){
 while($row = $results->fetch_assoc()){
   //print_r($row["Vardas"]);
   include ("eiles-card.php");
 
+}
 }
  ?>

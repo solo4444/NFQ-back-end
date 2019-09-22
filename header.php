@@ -5,7 +5,7 @@ if(isset($_SESSION["admin_logged_in"])){
       <h1><a href="index.php">Švieslentė</a></h1>
       <ul>
         <li><a href="specialist-login.php">Specialisto puslapis</a></li>
-        <li><a href="">Lankytojo puslapis</a></li>
+        <li><a href="customer-login.php">Lankytojo puslapis</a></li>
         <li><a href="admin-login.php">Administravimo puslapis</a></li>
       </ul>
       <h2 class="atsijungti">Atsijungti</h2>
@@ -32,7 +32,7 @@ if(isset($_SESSION["admin_logged_in"])){
         <h1><a href="index.php">Švieslentė</a></h1>
         <ul>
           <li><a href="specialist-login.php">Specialisto puslapis</a></li>
-          <li><a href="">Lankytojo puslapis</a></li>
+          <li><a href="customer-login.php">Lankytojo puslapis</a></li>
           <li><a href="admin-login.php">Administravimo puslapis</a></li>
         </ul>
         <h2 class="atsijungti">Atsijungti</h2>
@@ -60,7 +60,7 @@ echo '<header>
   <h1><a href="index.php">Švieslentė</a></h1>
   <ul>
     <li><a href="specialist-login.php">Specialistoooo puslapis</a></li>
-    <li><a href="">Lankytojo puslapis</a></li>
+    <li><a href="customer-login.php">Lankytojo puslapis</a></li>
     <li><a href="admin-login.php">Administravimo puslapis</a></li>
   </ul>
 </header>';

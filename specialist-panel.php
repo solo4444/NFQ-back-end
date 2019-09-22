@@ -15,14 +15,16 @@
     $(document).ready(function() {
 
       $(document).on("click", ".aptarnauti", function() {
-        var vardas = $(this).parent().parent().children().eq(0).text();
-        var pavarde = $(this).parent().parent().children().eq(1).text();
-
+        var vardas = $.trim($(this).parent().parent().children().eq(0).text());
+        var pavarde = $.trim($(this).parent().parent().children().eq(1).text());
+        // alert(vardas);
+        // alert(pavarde);
         $.ajax({
               type: 'POST',
               url: 'aptarnauti-klienta.php',
               data: {Vardas: vardas, Pavarde: pavarde},
                    success: function(response) {
+                     alert(response);
                      location.href = "specialist-panel.php";
                     }
               });

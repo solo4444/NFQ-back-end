@@ -1,7 +1,17 @@
 <?php
 include 'model_view_controller.php';
 if(isset($_POST["Vardas"]) && isset($_POST["Pavarde"])){
-  $sql = "DELETE FROM laukiantys WHERE Vardas = '$_POST["Vardas"]' Pavarde = '$_POST["Pavarde"]'";
- connect_to_db("eiles_info")->query($sql);
+  $name = $_POST["Vardas"];
+  $surname = $_POST["Pavarde"];
+  $sql = "UPDATE laukiantys SET Aptarnautas = 1 WHERE Vardas = '$name' AND Pavarde = '$surname'";
+  // $sql = "DELETE FROM laukiantys WHERE Vardas = '$name' AND Pavarde = '$surname'";
+  $conn = connect_to_db("eiles_info");
+  if($conn->query($sql) === TRUE){
+    echo 'Aptarnauta sekmingai';
+  }
+  else{
+    echo 'Nepavyko aptarnauti';
+  }
+
 }
  ?>
