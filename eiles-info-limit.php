@@ -1,10 +1,10 @@
 <?php
-if(isset($_GET["kiek"]))
+if(isset($_GET["Kiek"]))
 {
-  if($_GET["kiek"] == 10){
+  if($_GET["Kiek"] == 10){
     echo '10';
   }
-  else if($_GET["kiek"] == 15){
+  else if($_GET["Kiek"] == 15){
     echo '15';
   }
   else {
