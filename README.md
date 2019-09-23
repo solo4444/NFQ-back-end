@@ -12,3 +12,4 @@ Admin password: kabakaba
 Lankytojo paskyras gali sukurti administratorius
 Lankytoju url arba bandant prisijungt per svetaine reikalauja pin kodo, kurie yra saugojami duombazeje ties user_info -> customer_links
 Specialisto Adminas1 slaptazodis: adminas1
+Live puslapis neveiks, todel rekomenduociau viska daryt per localhost
