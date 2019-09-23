@@ -1,7 +1,10 @@
 <?php
 include 'model_view_controller.php';
-
-$results = get_eiles_info();
+if(isset($_GET["kiek"])){
+  $results = get_eiles_info($_GET["kiek"]);
+}else{
+$results = get_eiles_info(10);
+}
 
 
 

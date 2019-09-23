@@ -27,21 +27,20 @@
       </div>
       <button type="submit" class="btn btn-warning mb-2 refresh">Refresh</button>
       <script type="text/javascript">
-      // $(document).ready(function() {
-      //
-      //   $(document).on("click", ".refresh", function() {
-      //     var kiek = $('input[name=inlineRadioOptions]:checked').val();
-      //     $.ajax({
-      //           type: 'GET',
-      //           url: 'eiles-info.php',
-      //           data: {Kiek: kiek},
-      //                success: function(response) {
-      //                  alert(response);
-      //                  //location.href = "index.php";
-      //                 }
-      //           });
-      //   })
-      // })
+      $(document).ready(function() {
+        $(document).on("click", ".refresh", function() {
+          var kiek = $('input[name=inlineRadioOptions]:checked').val();
+          $.ajax({
+                type: 'GET',
+                url: 'eiles-info-limit.php',
+                data: {Kiek: kiek},
+                     success: function(response) {
+                       alert(response);
+                       location.href = "index.php?kiek=".response;
+                      }
+                });
+        })
+      })
       </script>
         <?php  include 'eiles-info.php'; ?>
 

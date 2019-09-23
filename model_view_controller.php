@@ -24,9 +24,9 @@ function get_customer_pin($name, $surname){
     }
 
 }
-function get_eiles_info(){
+function get_eiles_info($kiek){
 
-    $sql = "SELECT Vardas, Pavarde, Laikas, Specialistas,PLaikas FROM laukiantys WHERE Aptarnautas = 0 ORDER BY Laikas ASC";
+    $sql = "SELECT Vardas, Pavarde, Laikas, Specialistas,PLaikas FROM laukiantys WHERE Aptarnautas = 0 ORDER BY Laikas ASC LIMIT $kiek";
     $result = connect_to_db("eiles_info")->query($sql);
     if($result){
     return $result;
