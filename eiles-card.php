@@ -14,6 +14,6 @@ echo'
     '.$row["Specialistas"].'
   </div>
   <div class="col text-center">
-    '.$row["PLaikas"].'
+    '.$pLaikas.'
   </div>
 </div>' ?>

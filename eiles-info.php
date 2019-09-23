@@ -19,11 +19,12 @@ echo '<div class="row eiles-card-info border">
     Specialistas
   </div>
   <div class="col text-center">
-    Prognozuojamas Laikas
+    Kiek liko laukti
   </div>
 </div>';
 if($results){
 while($row = $results->fetch_assoc()){
+  $pLaikas = get_waiting_time($row["Specialistas"],$row["Vardas"], $row["Pavarde"]);
   //print_r($row["Vardas"]);
   include ("eiles-card.php");
 

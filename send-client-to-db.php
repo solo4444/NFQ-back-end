@@ -21,6 +21,12 @@ $sql = "INSERT INTO laukiantys (Vardas, Pavarde, Specialistas) VALUES ('$name' ,
 $sql_check_name = "SELECT Vardas FROM eiles_info";
 $sql_check_surname = "SELECT Pavarde FROM eiles_info";
 $sql_check_specialist = "SELECT username FROM users";
+$sql_check_url = "SELECT url FROM customer_links";
+
+$random_pin = rand(1000,9999);
+$random_url = "customer-panel.php?vardas=".$name."&pavarde=".$surname."&/".rand(1000000,9999999);
+
+$sql_customer = "INSERT INTO customer_links (Vardas, Pavarde, url, pin) VALUES ('$name', '$surname', '$random_url', '$random_pin')";
 
 if($conn->query($sql_check_name) === TRUE){
   if($conn->query($sql_check_username) === TRUE){
@@ -32,6 +38,9 @@ else if($conn1->query($sql_check_specialist) === FALSE){
 }
 else if ($conn->query($sql) === TRUE) {
     echo $name . " " . $surname . " sėkmingai įrašytas į eilę";
+    if($conn1->query($sql_customer) === TRUE){
+      echo'!';
+    }
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

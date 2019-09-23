@@ -11,7 +11,7 @@
   <body>
 
     <?php include 'header.php'; ?>
-    <?php // TODO: panaudoti get ir limit kai norima rodyti daugiau arba maziau turinio, sukurti pinus per admina ?>
+    <?php // TODO: panaudoti get ir limit kai norima rodyti daugiau arba maziau turinio ?>
     <div class="container">
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="10">

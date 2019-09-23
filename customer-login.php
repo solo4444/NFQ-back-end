@@ -54,7 +54,6 @@
           else{
             $(".error-name").text("Vardas per trumpas");
           }
-          alert(pin);
           if(atitinkareikalavimus){
 
             $.ajax({
@@ -62,11 +61,12 @@
                   url: 'check-customer-login.php',
                   data: { Name: vardas, Surname: pavarde, Pin: pin} ,
                        success: function(response) {
-                         if(response == "true"){
-                            location.href = "customer-panel.php";
+                         alert(response);
+                         if(response == "false"){
+                              $(".status").text(response);
                           }
                           else{
-                            $(".status").text(response);
+                            location.href = response;
                           }
                         }
 

@@ -1,8 +1,9 @@
 <?php
 include 'model_view_controller.php';
-if(isset($_SESSION["logged_in_specialist"])){
-$results = get_eiles_info_by_specialist($_SESSION["logged_in_specialist"]);
-echo'<div class="row eiles-card-info border">
+if(isset($_GET["vardas"]) && isset($_GET["pavarde"])){
+$pLaikas = get_waiting_time($row["Specialistas"],$_GET["vardas"], $_GET["pavarde"]);
+$results = get_eiles_info_by_customer($_GET["vardas"], $_GET["pavarde"]);
+echo '<div class="row eiles-card-info border">
   <div class="col border-right text-center">
     Vardas
   </div>
@@ -16,16 +17,16 @@ echo'<div class="row eiles-card-info border">
     Specialistas
   </div>
   <div class="col border-right text-center">
-    Prognozuojamas Laikas
+    Kiek liko laiko
   </div>
   <div class="col text-center">
     Veiksmai
   </div>
 </div>';
 while($row = $results->fetch_assoc()){
+
   //print_r($row["Vardas"]);
-  $pLaikas = get_waiting_time($row["Specialistas"],$row["Vardas"], $row["Pavarde"]);
-  echo'
+  echo '
   <div class="row eiles-card-info border">
     <div class="col border-right text-center vardas">
       '.$row["Vardas"].'
@@ -40,11 +41,11 @@ while($row = $results->fetch_assoc()){
       '.$row["Specialistas"].'
     </div>
     <div class="col border-right text-center">
-      '.$pLaikas.'
+      '.$row["PLaikas"].'
     </div>
     <div class="col text-center d-inline-block">
-    <button class="btn btn-primary aptarnauti" type="submit">Aptarnauti</button>
-    <button class="btn btn-danger istrinti" type="submit">Ištrinti</button>
+    <button class="btn btn-primary pavelinti" type="submit">Pavėlinti</button>
+    <button class="btn btn-danger atsaukti" type="submit">Atšaukti</button>
     </div>
   </div>';
 
