@@ -86,10 +86,10 @@ function add_service_time($name, $surname)
     $specialistas = $row["Specialistas"];
     $sql1 = "INSERT INTO laukimo_info (Vardas, Pavarde, Apsilankymo_laikas, Specialistas) VALUES ('$name', '$surname', '$apsilankymo_laikas', '$specialistas')";
     if(connect_to_db("eiles_info")->query($sql1) === TRUE){
-      echo'viskas veikia!';
+
     }
     else{
-      echo 'puliuoju';
+
       echo connect_to_db("eiles_info")->error;
     }
   }

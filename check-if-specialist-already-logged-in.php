@@ -6,4 +6,4 @@ if(isset($_SESSION["specialist_logged_in"]) && isset($_SESSION["logged_in_specia
     echo $_SESSION["specialist_logged_in"];
   }
 }
-else{ echo 'zopa'; } ?>
+?>

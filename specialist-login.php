@@ -35,7 +35,7 @@
                      if(response == "true"){
                         location.href = "specialist-panel.php";
                       }
-                      else{ alert(response); }
+
                     }
               });
 
@@ -64,7 +64,7 @@
                   url: 'check-specialist-login.php',
                   data: { Name: vardas, Password: slaptazodis} ,
                        success: function(response) {
-                         alert(response);
+                         
                          if(response == "true"){
                             location.href = "specialist-panel.php";
                           }

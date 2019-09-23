@@ -20,7 +20,7 @@ if(isset($_POST["Name"]) && isset($_POST["Password"])) {
     }
 }
 else{
-  echo 'viskas xujne';
+  echo 'viskas labai negerai';
 }
 
 ?>

@@ -18,6 +18,6 @@ if(isset($_POST["Name"]) && isset($_POST["Surname"]) && isset($_POST["Pin"])) {
     }
 }
 else{
-  echo 'viskas xujne';
+  echo 'viskas labai negerai';
 }
  ?>
